@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :logout]
   before_action :set_address, only: [:edit, :update]
 
-  def
 
   def show
   end
