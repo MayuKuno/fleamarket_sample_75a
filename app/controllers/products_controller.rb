@@ -36,13 +36,18 @@ class ProductsController < ApplicationController
         format.json
       end
     else
-      @category_parent_array <<  @category_parent_array =  Category.where(ancestry: nil)
+      @category_parent_array << @category_parent_array = Category.where(ancestry: nil)
       render :index
     end
   end
 
   def show
+    @category_parent_array = Category.where(ancestry: nil) do |parent|
+      @category_parent_array << @category_parent_array = Category.where(ancestry: nil)
+    end
 
+    @category_child_array = @product.category.parent.parent.children
+    @category_grandchild_array = @product.category.parent.children
   end
 
   def edit
@@ -100,10 +105,12 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
+    @products = Product.includes(:pictures).order('created_at DESC')
     if @product.destroy
       redirect_to products_path
     else
-      render :index
+      # render :index
     end
   end
 

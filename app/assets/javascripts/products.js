@@ -211,6 +211,9 @@ $(function () {
         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
           alert('出品に失敗しました！');
         })
+        .always(function () {
+          $(".submit").removeAttr("disabled")
+        }) 
     } else if ($(this).attr('class') == "edit_item") {
       $.ajax({
         url: url,
@@ -225,7 +228,10 @@ $(function () {
         })
         .fail(function (XMLHttpRequest, textStatus, errorThrown) {
           alert('出品に失敗しました！！');
-        });
+        })
+        .always(function () {
+          $(".submit").removeAttr("disabled")
+        }) 
     }
   });
    // 手数料計算機能
@@ -245,5 +251,23 @@ $(function () {
         }
   });
 
- 
+  $(function() {
+    $('img.thumb').mouseover(function(){
+      
+      var selectedSrc = $(this).attr('src').replace(".thumb");
+      
+      // 画像入れ替え
+      $('img.mainImage').stop().fadeOut(50,function(){
+        $('img.mainImage').attr('src', selectedSrc);
+        $('img.mainImage').stop().fadeIn(200);
+      });
+      // サムネイルの枠を変更
+        //$(this).css({"border":"2px solid #ff5a71"});
+    });
+    
+    // マウスアウトでサムネイル枠もとに戻す
+    $('img.thumb').mouseout(function(){
+      $(this).css({"border":""});
+    });
+  });
 });

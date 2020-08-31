@@ -2,7 +2,7 @@
 <%# 統合してからheaderを共通化する %>
 <div class="header">
   <div class="header__icon">
-  <%= image_tag '/assets/logo/logo.png', :size =>'185x49' %>
+  <%= image_tag asset_path('logo/logo.png'), :size =>'185x49' %>
   </div>
 </div>
 <div class="productsale__main">
@@ -126,7 +126,7 @@
   </div>
   <div class="productsale__main__containers__save">
     <div class="productsale__main__containers__save__submit">
-      <%= f.submit "出品する" %>
+      <%= f.submit "出品する",class: "submit" %>
     </div>
     <div class="productsale__main__containers__save__draft">
       <%#= f.submit "下書きに保存" %>
