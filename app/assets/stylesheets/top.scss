@@ -241,7 +241,6 @@ body {
     .mainVisual {
       width: 100%;
       height: 560px;
-      background-image: url(/assets/pict/bg-mainVisual-pict_pc.jpg);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top center;
@@ -349,7 +348,6 @@ body {
 
     }
     .topMiddleDl {
-      background-image: url(/assets/pict/bg-topMiddleDl-pict.jpg);
       background-position: bottom right;
       height: 400px;
       background-size: cover;
@@ -456,64 +454,70 @@ body {
           }
         }
         .productLists {
-          width: 780px;
           margin: 26px auto;
           display: flex;
-          justify-content: space-around;
-          .productList {
-            width: 220px;
-            display: inline-block;
-            float: left;
-            a {
-              background-color: #fff;
-              display: inline-block;
-            }
-            .productList--img {
+          justify-content: center;
+          &__container{
+            width: 880px;
+            display: flex;
+            justify-content: space-between;
+            overflow-x: scroll;
+            .productList {
               width: 220px;
-              height: 150px;
-              position: relative;
-              overflow: hidden;
-              margin: 0;
-              z-index: auto;
-              img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                width: 100%;
-                z-index: auto;
+              margin: 0 10px;
+              display: inline-block;
+              justify-content: space-between;
+              a {
+                background-color: #fff;
+                display: inline-block;
+              }
+              .productList--img {
+                width: 220px;
                 height: 150px;
-                object-fit: cover;
-              }
-            }
-            .productList--body {
-              background-color: #fff;
-              color: #333;
-              padding: 16px;
-              .name {
+                position: relative;
                 overflow: hidden;
-                line-height: 1.5;
-                font-size: 16px;
-                text-align: left;
-              }
-              .details {
-                font-size: 16px;
-                ul {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
+                margin: 0;
+                z-index: auto;
+                img {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  bottom: 0;
+                  width: 100%;
+                  z-index: auto;
+                  height: 150px;
+                  object-fit: cover;
                 }
-                p {
-                  font-size: 10px;
+              }
+              .productList--body {
+                background-color: #fff;
+                color: #333;
+                padding: 16px;
+                .name {
+                  overflow: hidden;
+                  line-height: 1.5;
+                  font-size: 16px;
                   text-align: left;
                 }
+                .details {
+                  font-size: 16px;
+                  ul {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+                  p {
+                    font-size: 10px;
+                    text-align: left;
+                  }
+                }
               }
             }
-          }
-          a {
-            text-decoration: none;
-            position: relative;
+            a {
+              text-decoration: none;
+              position: relative;
+            }
           }
         }
       }
@@ -524,7 +528,6 @@ body {
   }
 
   .appBanner {
-    background-image: url(/assets/pict/bg-appBanner-pict.jpg);
     padding: 100px 40px;
     position: relative;
     background-size: cover;
